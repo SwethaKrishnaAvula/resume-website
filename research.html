@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Raleway:wght@300;400;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="axon-sidebar">
+        <div class="axon-segment"><a href="portfolio.html">Home</a></div>
+        <div class="axon-segment"><a href="about.html">About</a></div>
+        <div class="axon-segment"><a href="research.html">Research</a></div>
+        <div class="axon-segment"><a href="experience.html">Experiences</a></div>
+        <div class="axon-segment pulse" id="contact-segment">
+            <a href="contact.html">Contact</a>
+            <svg class="root-svg" viewBox="0 0 200 200">
+                <path class="root" d="M100 0 C100 50, 80 100, 100 150 
+                                       M100 80 C90 110, 70 130, 80 160 
+                                       M100 100 C110 130, 130 150, 120 180 
+                                       M90 130 C85 150, 75 170, 85 190 
+                                       M110 130 C115 150, 125 170, 115 190" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Research Work</h1>
+        </header>
+
+        <!-- Research Section with Images inside Boxes -->
+        <div class="research">
+            <div class="research-item" id="research1">
+                <img src="research1.png" alt="Understanding Spatial Navigation" class="research-img">
+                <h2>Understanding Spatial Navigation</h2>
+            </div>
+            <div class="research-item" id="research2">
+                <img src="research2.jpg" alt="Behavioral Analysis in Dogs" class="research-img">
+                <h2>Behavioral Analysis in Dogs</h2>
+            </div>
+        </div>
+
+        <!-- Research Details (Initially Hidden) -->
+        <div class="research-details" id="research-details">
+            <div class="details-content" id="research-details-content">
+                <p>Select a research to see the details.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle the research click and display details
+        const research1 = document.getElementById('research1');
+        const research2 = document.getElementById('research2');
+        const researchDetails = document.getElementById('research-details');
+        const researchDetailsContent = document.getElementById('research-details-content');
+
+        // Initially hide the details section
+        researchDetails.style.display = 'none';
+
+        research1.addEventListener('click', () => {
+            researchDetails.style.display = 'block'; // Show details
+            researchDetailsContent.innerHTML = `
+                <h3>Understanding Spatial Navigation</h3>
+                <p><strong>Objective:</strong> Understand exploratory behavior, learning and recall of hippocmapus-dependant memory</p>
+                <p><strong>Description:</strong> I worked in Spatial cognition lab at George Mason University, where I got a chance to monitor mices in a closed space. I collected 2D, 3D data and annotate various body parts in multiple frames. I analysed it using multiple ML pipelines.</p>
+                <p><strong>Tools Used:</strong> Python, TensorFlow, NumPy, Matplotlib, DANNCE (3-Dimensional Aligned Neural Network for Computational Ethology), deeplabcut</p>
+            `;
+        });
+
+        research2.addEventListener('click', () => {
+            researchDetails.style.display = 'block'; // Show details
+            researchDetailsContent.innerHTML = `
+                <h3>Behavioral Analysis in Dogs</h3>
+                <p><strong>Objective:</strong>Compare the brain activity patterns of dogs and the robot dog (AIBO) using fMRI data</p>
+                <p><strong>Description:</strong>I worked on preprocessing the data which involves tasks like motion correction, slice timing,spatial normalization etc.  I conducted both first and second-level analyses to examine the data in detail. The first-level analysis focused on individual scans, looking for activity patterns related to specific stimuli or tasks, while the second-level analysis helped identify trends across multiple sessions or subjects. I then identified Regions of Interest (ROIs) in the brain for the dogs and analyzed corresponding areas in the AIBO’s sensory data. This allowed me to compare how both responded to different conditions, such as to familiar faces and dissimilar faces.</p>
+                <p><strong>Tools Used:</strong> MATLAB, SPM (Statistical Parametric Mapping), Hopper server </p>
+            `;
+        });
+    </script>
+</body>
+</html>

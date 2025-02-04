@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Raleway:wght@300;400;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="axon-sidebar">
+        <div class="axon-segment"><a href="portfolio.html">Home</a></div>
+        <div class="axon-segment"><a href="about.html">About</a></div>
+        <div class="axon-segment"><a href="research.html">Research</a></div>
+        <div class="axon-segment"><a href="experience.html">Experiences</a></div>
+        <div class="axon-segment pulse" id="contact-segment">
+            <a href="contact.html">Contact</a>
+            <svg class="root-svg" viewBox="0 0 200 200">
+                <path class="root" d="M100 0 C100 50, 80 100, 100 150 
+                                       M100 80 C90 110, 70 130, 80 160 
+                                       M100 100 C110 130, 130 150, 120 180 
+                                       M90 130 C85 150, 75 170, 85 190 
+                                       M110 130 C115 150, 125 170, 115 190" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Experience</h1>
+        </header>
+
+        <!-- Research Section with Images inside Boxes -->
+        <div class="research">
+            <div class="research-item" id="research1">
+                <img src="velmeni.jpg" alt="Velmeni icon" class="research-img">
+                <h2>Data Management & Engineering Intern</h2>
+            </div>
+            <div class="research-item" id="research2">
+                <img src="LA.jpg" alt="college of science logo" class="research-img">
+                <h2>Learning Assistant</h2>
+            </div>
+            <div class="research-item" id="research3">
+                <img src="star.jpeg" alt="Information Technology services logo" class="research-img">
+                <h2>Multimedia mentor</h2>
+            </div>
+        </div>
+
+        <!-- Research Details (Initially Hidden) -->
+        <div class="research-details" id="research-details">
+            <div class="details-content" id="research-details-content">
+                <p>Select a research to see the details.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle the research click and display details
+        const research1 = document.getElementById('research1');
+        const research2 = document.getElementById('research2');
+        const researchDetails = document.getElementById('research-details');
+        const researchDetailsContent = document.getElementById('research-details-content');
+
+        // Initially hide the details section
+        researchDetails.style.display = 'none';
+
+        research1.addEventListener('click', () => {
+            researchDetails.style.display = 'block'; // Show details
+            researchDetailsContent.innerHTML = `
+                <h3>Data Management & Engineering Intern</h3>
+                <p><strong>Description:</strong> As an intern, I was able to use python to clean and preprocess different type of dental data. Also used postman to identify and resolve API related issues.</p>
+                <p><strong>Experience:</strong> The team was amazing, I got a chance to have a better understanding about data cleaning and modeling. It was a great experience to see how a startup works.</p>
+                <p><strong>Tools Used:</strong> Postman, python, Annotation tools, Amazon S3</p>
+            `;
+        });
+
+        research2.addEventListener('click', () => {
+            researchDetails.style.display = 'block'; // Show details
+            researchDetailsContent.innerHTML = `
+                <h3>Learning Assistant</h3>
+                <p><strong>Description:</strong>Assisted the professor during discrete mathematics lecture and conducted problem solving sessions with students individually. </p>
+                <p><strong>Experience:</strong> This opportunity gave me the chance to teach and learn in a diverse class setting. </p>
+                <p><strong>Skills:</strong> discrete mathematics, logic, communication</p>
+            `;
+        });
+
+        research3.addEventListener('click', () => {
+            researchDetails.style.display = 'block'; // Show details
+            researchDetailsContent.innerHTML = `
+                <h3>Multimedia Mentor</h3>
+                <p><strong>Description:</strong> Worked with students to guide them while using Adobe application and other web development/design tools.</p>
+                <p><strong>Experience:</strong>In this inclusive workspace, I got a chance to learn a lot about designing keeping customers in mind. </p>
+                <p><strong>Tools Used:</strong>Adobe suite, Figma, Blender </p>
+            `;
+        });
+    </script>
+</body>
+</html>
