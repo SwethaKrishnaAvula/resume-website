@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Raleway:wght@300;400;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="axon-sidebar">
+        <div class="axon-segment"><a href="portfolio.html">Home</a></div>
+        <div class="axon-segment"><a href="about.html">About</a></div>
+        <div class="axon-segment"><a href="project.html">Project</a></div>
+        <div class="axon-segment"><a href="research.html">Research</a></div>
+        <div class="axon-segment"><a href="experience.html">Experience</a></div>
+        <div class="axon-segment pulse" id="contact-segment">
+            <a href="contact.html">Contact</a>
+            <svg class="root-svg" viewBox="0 0 200 200">
+                <path class="root" d="M100 0 C100 50, 80 100, 100 150 
+                                       M100 80 C90 110, 70 130, 80 160 
+                                       M100 100 C110 130, 130 150, 120 180 
+                                       M90 130 C85 150, 75 170, 85 190 
+                                       M110 130 C115 150, 125 170, 115 190" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Project Work</h1>
+        </header>
+
+        <!-- Project Section with Images inside Boxes -->
+        <div class="research">
+            <div class="research-item" id="research1">
+                <img src="project1.png" alt="OCRganise" class="research-img">
+                <h2>Scan . Split . Supervise</h2>
+            </div>
+            <div class="research-item" id="research2">
+                <img src="project2.png" alt="Under Care" class="research-img">
+                <h2>AI to diagnose minor injuries </h2>
+            </div>
+        </div>
+
+        <!-- Research Details (Initially Hidden) -->
+        <div class="research-details" id="research-details">
+            <div class="details-content" id="research-details-content">
+                <p>Select a research to see the details.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle the research click and display details
+        const research1 = document.getElementById('research1');
+        const research2 = document.getElementById('research2');
+        const researchDetails = document.getElementById('research-details');
+        const researchDetailsContent = document.getElementById('research-details-content');
+
+        // Initially hide the details section
+        researchDetails.style.display = 'none';
+
+        research1.addEventListener('click', () => {
+            researchDetails.style.display = 'block'; // Show details
+            researchDetailsContent.innerHTML = `
+                <h3>OCRganise</h3>
+                <p><strong>Objective:</strong> OCRganise is a PWA that can act as a smart expense tracker, bill scanner, and cost splitter all rolled into one.</p>
+                <p><strong>Description:</strong>Users can upload or take a photo of their receipts, The app uses OCR (Optical Character Recognition) to extract items and prices. -You can then split the total (or individual items) with friends.</p>
+                <p><strong>Tools Used:</strong>GeminiAPI, github, Mongodb, nextjs, python, tabscanner, vercel</p>
+            `;
+        });
+
+        research2.addEventListener('click', () => {
+            researchDetails.style.display = 'block'; // Show details
+            researchDetailsContent.innerHTML = `
+                <h3>Under Care</h3>
+                <p><strong>Objective:</strong>It uses AI to diagnose minor injuries and non-urgent health conditions with reliable symptom analysis and photo-based assessments to bridge the healthcare gap.</p>
+                <p><strong>Description:</strong> The platform provides reliable symptom analysis, injury assessments, and personalized recommendations, including over-the-counter medication suggestions and lifestyle adjustments.</p>
+                <p><strong>Tools Used:</strong>FastAPI, google-maps, next.js, perplexity-api, pillow, python, resnet-50, torch, torchvision, uvicorn </p>
+            `;
+        });
+    </script>
+</body>
+</html>
